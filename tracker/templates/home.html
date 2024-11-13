@@ -8,15 +8,58 @@
 
 {% block content %}
 <div class="container mt-5">
+    <!-- Main Content -->
     <div class="row">
+        <!-- Text Section -->
         <div class="col-md-8">
             <h3>Track Your Meals and Progress</h3>
             <p>Log your meals, track your nutrition, and monitor your health goals!</p>
             <a href="{% url 'goals' %}" class="btn btn-primary">Start Tracking</a>
         </div>
+        <!-- Image Section -->
         <div class="col-md-4">
             <img src="{% static 'images/meal-tracker.jpg' %}" alt="Meal Tracker" class="img-fluid">
         </div>
     </div>
+
+    <!-- Chart Section -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h4>Your Progress</h4>
+            <canvas id="nutritionChart"></canvas>
+        </div>
+    </div>
 </div>
+
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('nutritionChart').getContext('2d');
+    var nutritionChart = new Chart(ctx, {
+        type: 'line', // Line chart for progress
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Sample days of the week
+            datasets: [{
+                label: 'Calories',
+                data: [2000, 1800, 2100, 1900, 2200, 2000, 2300], // Example data
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Calories'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
 {% endblock %}

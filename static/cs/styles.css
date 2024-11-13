@@ -1,0 +1,106 @@
+/* Global Styles */
+.diet-app body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Sidebar Styles */
+.diet-app .sidebar {
+    background: linear-gradient(to bottom, #ffffff, #e8f4f8);
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.diet-app .sidebar .nav-link {
+    color: #333;
+    padding: 12px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.diet-app .sidebar .nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.diet-app .sidebar .nav-link:hover {
+    background-color: #e1f5fe;
+}
+
+/* User Info Styling */
+.diet-app .user-info img.profile-pic {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.diet-app .user-info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.diet-app .user-info .stats p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Main Content */
+.diet-app h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Header Section */
+.diet-app .header {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.diet-app .header .icons i {
+    font-size: 1.5rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Custom Button Styles */
+.diet-app .btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.diet-app .btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .diet-app .sidebar {
+        display: none;
+    }
+
+    .diet-app .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Page-specific classes */
+.diet-app .goals-page .main-content {
+    background-color: #e8f4f8;
+}
+
+.diet-app .statistics-page .main-content {
+    background-color: #f4f6f9;
+}
+/* User Info Styling */
+.diet-app .user-info img.profile-pic {
+    width: 50px; /* Reduced width */
+    height: 50px; /* Reduced height */
+    object-fit: cover;
+    margin-bottom: 10px; /* Adjusted margin for smaller profile picture */
+}
