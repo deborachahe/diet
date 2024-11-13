@@ -114,7 +114,7 @@ def user_logout(request):
     messages.info(request, "You have successfully logged out.")
     return redirect('home')  # Redirect to home or any other page
 def goals(request):
-    return render(request, 'tracker/goals.html')
+    return render(request, 'goals.html')
 
 def schedule_view(request):
     return render(request, 'schedule.html')
