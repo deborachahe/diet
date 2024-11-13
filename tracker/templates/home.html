@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home - Diet App{% endblock %}
+
+{% block page_title %}Welcome to Your Diet Tracker{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Track Your Meals and Progress</h3>
+            <p>Log your meals, track your nutrition, and monitor your health goals!</p>
+            <a href="{% url 'goals' %}" class="btn btn-primary">Start Tracking</a>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/meal-tracker.jpg' %}" alt="Meal Tracker" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endblock %}

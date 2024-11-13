@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Diet App{% endblock %}</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-none d-md-block sidebar bg-dark text-white">
+                <div class="sidebar-sticky">
+                    <!-- User Info Section -->
+                    <div class="user-info text-center py-4">
+                        <img src="{% static 'images/profile.jpg' %}" alt="Profile Picture" class="profile-pic rounded-circle">
+                        <h4>Richard Jones</h4>
+                        <p>Male, 28 years</p>
+                        <div class="stats">
+                            <p>Height: 185 cm</p>
+                            <p>Weight: 176 kg</p>
+                        </div>
+                    </div>
+                    <!-- Navigation Links -->
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/goals/' %}active{% endif %}" href="{% url 'goals' %}">
+                                My Goals
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/schedule/' %}active{% endif %}" href="{% url 'schedule' %}">
+                                Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/achievements/' %}active{% endif %}" href="{% url 'achievements' %}">
+                                Achievements
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/statistics/' %}active{% endif %}" href="{% url 'statistics' %}">
+                                Statistics
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/settings/' %}active{% endif %}" href="{% url 'settings' %}">
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="pt-3 pb-2 mb-3">
+                    <!-- Page Title -->
+                    <h2>{% block page_title %}Track Fitness{% endblock %}</h2>
+
+                    <!-- Header Section -->
+                    <div class="header d-flex justify-content-between align-items-center mb-4">
+                        <p>Day 2, Week 6 - Today, 7th June, 2018</p>
+                        <div class="icons">
+                            <i class="fas fa-bell"></i>
+                            <i class="fas fa-sync"></i>
+                        </div>
+                    </div>
+
+                    <!-- Main Dashboard Content -->
+                    {% block content %}
+                    <!-- Page-specific content will go here -->
+                    {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Font Awesome and Bootstrap Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
