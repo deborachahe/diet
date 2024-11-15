@@ -99,8 +99,57 @@
 }
 /* User Info Styling */
 .diet-app .user-info img.profile-pic {
-    width: 50px; /* Reduced width */
-    height: 50px; /* Reduced height */
+    width: 100px; 
+    height: 100px; 
     object-fit: cover;
-    margin-bottom: 10px; /* Adjusted margin for smaller profile picture */
+    margin-bottom: 10px; 
+}
+
+/* Styles scoped to the Goals page */
+
+.goals-page .display-5 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.goals-page .lead {
+    font-size: 1.25rem;
+    color: #555;
+}
+
+.goals-page .form-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.goals-page .btn-primary {
+    background-color: #F79420;
+    border-color: #F79420;
+}
+
+.goals-page .btn-primary:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+.goals-page .graph-placeholder {
+    height: 300px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.goals-page .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goals-page .badge {
+    font-size: 0.9rem;
 }

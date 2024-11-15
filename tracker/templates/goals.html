@@ -1,7 +1,68 @@
-<!-- tracker/templates/tracker/goals.html -->
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block title %}Goals - Diet App{% endblock %}
+
+{% block page_title %}Set Your Health Goals{% endblock %}
+
 {% block content %}
-<h2>Goals Page</h2>
-<p>This is the goals page!</p>
+<div class="container goals-page mt-5">
+    <!-- Goals Header -->
+    <div class="text-center">
+        <h3 class="display-5">Set and Achieve Your Goals</h3>
+        <p class="lead">Create your dietary and fitness goals, track your achievements, and stay motivated!</p>
+    </div>
+    
+    <!-- Goal Form Section -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h5>Create a New Goal</h5>
+            <form method="POST" action="{% url 'add_goal' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="goalName" class="form-label">Goal Name</label>
+                    <input type="text" class="form-control" id="goalName" name="goal_name" placeholder="e.g., Reduce sugar intake">
+                </div>
+                <div class="mb-3">
+                    <label for="goalDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="goalDescription" name="goal_description" rows="3" placeholder="Describe your goal..."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="targetDate" class="form-label">Target Date</label>
+                    <input type="date" class="form-control" id="targetDate" name="target_date">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Goal</button>
+            </form>
+        </div>
+        
+        <!-- Goals Progress Section -->
+        <div class="col-md-6">
+            <h5>Your Current Goals</h5>
+            <ul class="list-group mb-3">
+                <!-- Example goal item; this would be dynamically populated from the database -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Drink 8 glasses of water daily
+                    <span class="badge bg-success rounded-pill">On Track</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Limit sugar intake to 20g
+                    <span class="badge bg-warning rounded-pill">In Progress</span>
+                </li>
+            </ul>
+            <a href="{% url 'achievements' %}" class="btn btn-secondary">View Progress</a>
+        </div>
+    </div>
+
+    <!-- Optional Progress Section with Graph Placeholder -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h5 class="text-center">Progress Over Time</h5>
+            <div id="progress-graph" class="graph-placeholder">
+                <!-- Placeholder for future graph component -->
+                <p class="text-center">Progress graph will appear here...</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

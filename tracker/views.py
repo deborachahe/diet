@@ -127,3 +127,7 @@ def statistics(request):
 
 def settings(request):
     return render(request, 'settings.html')
+
+def add_goal(request):
+   
+    return render(request, 'add_goal.html')

@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-h9q3d=&decd!i=8hl4f4yk++1g(j##a0er#jiy=^+cvyac&53p
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '127.0.0.1', 'localhost']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -18,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tracker',  # Assuming 'tracker' is your app
+    'tracker',  
 ]
 
 MIDDLEWARE = [

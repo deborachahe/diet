@@ -18,7 +18,7 @@
         </div>
         <!-- Image Section -->
         <div class="col-md-4">
-            <img src="{% static 'images/meal-tracker.jpg' %}" alt="Meal Tracker" class="img-fluid">
+            <img src="{% static 'images/Meal Tracker.jpeg' %}" alt="Meal Tracker" class="img-fluid">
         </div>
     </div>
 
@@ -31,35 +31,6 @@
     </div>
 </div>
 
-<!-- Chart.js Script -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    var ctx = document.getElementById('nutritionChart').getContext('2d');
-    var nutritionChart = new Chart(ctx, {
-        type: 'line', // Line chart for progress
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Sample days of the week
-            datasets: [{
-                label: 'Calories',
-                data: [2000, 1800, 2100, 1900, 2200, 2000, 2300], // Example data
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                fill: true,
-                tension: 0.4
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Calories'
-                    }
-                }
-            }
-        }
-    });
-</script>
+
 
 {% endblock %}

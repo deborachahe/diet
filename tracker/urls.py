@@ -17,6 +17,7 @@ urlpatterns = [
     path('log/', views.log_food, name='log_food'),
     path('tracker-logs/', views.tracker_log_list, name='tracker_log_list'),
     path('goals/', views.goals, name='goals'),
+    path('goals/add/', views.add_goal, name='add_goal'),
     path('schedule/', views.schedule_view, name='schedule'),
     path('achievements/', views.achievements, name='achievements'),
     path('statistics/', views.statistics, name='statistics'), 
